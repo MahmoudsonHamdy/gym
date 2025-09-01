@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏋️‍♂️ الدليل الشامل لخطة الضخامة الغذائية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.2);
+            padding: 1rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .tab-btn:hover, .tab-btn.active {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+        }
+
+        .content-section {
+            display: none;
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .content-section.active {
+            display: block;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .meal-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-right: 5px solid #28a745;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .meal-card:hover {
+            transform: translateX(-5px);
+        }
+
+        .meal-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .food-item {
+            background: rgba(52, 152, 219, 0.1);
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border-radius: 10px;
+            border-right: 3px solid #3498db;
+        }
+
+        .calories-info {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .alternatives {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .shopping-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .shopping-category {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(142, 68, 173, 0.3);
+        }
+
+        .shopping-category h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .shopping-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tip-card {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(232, 67, 147, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tip-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #fff, transparent, #fff);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            position: relative;
+            margin-right: 2rem;
+            box-shadow: 0 10px 25px rgba(116, 185, 255, 0.3);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            right: -1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 15px;
+            background: #00b894;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px white, 0 0 0 8px #00b894;
+        }
+
+        .progress-bar {
+            background: rgba(255,255,255,0.2);
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00b894, #00cec9);
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        .checklist {
+            background: linear-gradient(135deg, #6c5ce7, #5f3dc4);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.3);
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .checklist-item:hover {
+            background: rgba(255,255,255,0.1);
+            padding-right: 1rem;
+            border-radius: 10px;
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid white;
+            border-radius: 5px;
+            margin-left: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .checkbox.checked {
+            background: #00b894;
+            border-color: #00b894;
+        }
+
+        .checkbox.checked::after {
+            content: '✓';
+            color: white;
+            font-weight: bold;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #e17055, #d63031);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-right: 5px solid #fff;
+        }
+
+        .success-box {
+            background: linear-gradient(135deg, #00b894, #00cec9);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-right: 5px solid #fff;
+        }
+
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(232, 67, 147, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(232, 67, 147, 0.6);
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+            margin-left: 0.5rem;
+        }
+
+        .number-badge {
+            background: linear-gradient(135deg, #ff7675, #d63031);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-left: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .nav-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-btn {
+                width: 80%;
+                margin-bottom: 0.5rem;
+            }
+            
+            .shopping-grid, .tips-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header fade-in">
+            <h1>🏋️‍♂️ الدليل الشامل لخطة الضخامة الغذائية</h1>
+            <p style="font-size: 1.2rem; margin-bottom: 1rem;">زيادة الكتلة العضلية بطريقة صحية ونظيفة</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div style="font-size: 2rem; font-weight: bold;">3855</div>
+                    <div>سعرة حرارية يومياً</div>
+                </div>
+                <div class="stat-card">
+                    <div style="font-size: 2rem; font-weight: bold;">192g</div>
+                    <div>بروتين</div>
+                </div>
+                <div class="stat-card">
+                    <div style="font-size: 2rem; font-weight: bold;">433g</div>
+                    <div>كربوهيدرات</div>
+                </div>
+                <div class="stat-card">
+                    <div style="font-size: 2rem; font-weight: bold;">140g</div>
+                    <div>دهون</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <button class="tab-btn active" onclick="showSection('meals')">📋 الوجبات اليومية</button>
+            <button class="tab-btn" onclick="showSection('shopping')">🛒 قائمة المشتريات</button>
+            <button class="tab-btn" onclick="showSection('tips')">💡 النصائح والإرشادات</button>
+            <button class="tab-btn" onclick="showSection('timeline')">📈 خطة 90 يوم</button>
+            <button class="tab-btn" onclick="showSection('checklist')">✅ متابعة يومية</button>
+        </nav>
+
+        <!-- Meals Section -->
+        <section id="meals" class="content-section active">
+            <h2 style="color: #2c3e50; margin-bottom: 2rem; text-align: center; font-size: 2rem;">📋 جدول الوجبات اليومية</h2>
+            
+            <div class="meal-card">
+                <h3>🍳 الإفطار <span class="number-badge">1145 كالوري</span></h3>
+                <div class="food-item">
+                    <strong>3 بيض</strong> - 220 كالوري (18g بروتين / 15g دهون)
+                </div>
+                <div class="food-item">
+                    <strong>2 رغيف عيش بلدي (200g)</strong> - 520 كالوري (20g بروتين / 100g كارب / 4g دهون)
+                </div>
+                <div class="food-item">
+                    <strong>50g فول سوداني</strong> - 300 كالوري (12g بروتين / 10g كارب / 26g دهون)
+                </div>
+                <div class="food-item">
+                    <strong>موزة (120g)</strong> - 105 كالوري (1g بروتين / 27g كارب)
+                </div>
+                <div class="calories-info">
+                    الإجمالي: 1145 كالوري | بروتين 51g | كارب 137g | دهون 45g
+                </div>
+                <div class="alternatives">
+                    <strong>🔄 بدائل النشويات:</strong> 300g بطاطس مسلوقة، 200g مكرونة، 200g رز مسلوق
+                </div>
+            </div>
+
+            <div class="meal-card">
+                <h3>🍎 وجبة خفيفة 1 <span class="number-badge">150 كالوري</span></h3>
+                <div class="food-item">
+                    <strong>علبة زبادي</strong> - 90 كالوري (5g بروتين / 10g كارب / 3g دهون)
+                </div>
+                <div class="food-item">
+                    <strong>100g مانجا</strong> - 60 كالوري (0.5g بروتين / 15g كارب)
+                </div>
+                <div class="calories-info">
+                    الإجمالي: 150 كالوري | بروتين 5.5g | كارب 25g | دهون 3g
+                </div>
+                <div class="alternatives">
+                    <strong>🔄 بدائل الفاكهة:</strong> تفاح 52 كالوري، برتقال 45 كالوري، فراولة 32 كالوري
+                </div>
+            </div>
+
+            <div class="meal-card">
+                <h3>🍗 الغداء <span class="number-badge">750 كالوري</span></h3>
+                <div class="food-item">
+                    <strong>200g صدور فراخ</strong> - 330 كالوري (40g بروتين / 7g دهون)
+                </div>
+                <div class="food-item">
+                    <strong>200g رز مسلوق</strong> - 260 كالوري (6g بروتين / 58g كارب / 0.5g دهون)
+                </div>
+                <div class="food-item">
+                    <strong>200g خضار</strong> - 70 كالوري (3g بروتين / 14g كارب)
+                </div>
+                <div class="food-item">
+                    <strong>ملعقة زيت</strong> - 90 كالوري (10g دهون)
+                </div>
+                <div class="calories-info">
+                    الإجمالي: 750 كالوري | بروتين 49g | كارب 72g | دهون 17g
+                </div>
+                <div class="alternatives">
+                    <strong>🔄 بدائل البروتين:</strong> لحمة حمراء 500 كالوري، جمبري 220-250 كالوري، تونة 150 كالوري
+                </div>
+            </div>
+
+            <div class="meal-card">
+                <h3>🍌 وجبة خفيفة 2 <span class="number-badge">900 كالوري</span></h3>
+                <div class="food-item">
+                    <strong>2 رغيف عيش بلدي (200g)</strong> - 520 كالوري (20g بروتين / 100g كارب / 4g دهون)
+                </div>
+                <div class="food-item">
+                    <strong>50g فول سوداني</strong> - 300 كالوري (12g بروتين / 10g كارب / 26g دهون)
+                </div>
+                <div class="food-item">
+                    <strong>تفاحة متوسطة (150g)</strong> - 80 كالوري (0.5g بروتين / 20g كارب)
+                </div>
+                <div class="calories-info">
+                    الإجمالي: 900 كالوري | بروتين 32.5g | كارب 130g | دهون 30g
+                </div>
+            </div>
+
+            <div class="meal-card">
+                <h3>🥩 العشاء <span class="number-badge">910 كالوري</span></h3>
+                <div class="food-item">
+                    <strong>200g لحمة</strong> - 500 كالوري (45g بروتين / 35g دهون)
+                </div>
+                <div class="food-item">
+                    <strong>300g بطاطس</strong> - 250 كالوري (6g بروتين / 55g كارب)
+                </div>
+                <div class="food-item">
+                    <strong>سلطة خضار (200g)</strong> - 70 كالوري (3g بروتين / 14g كارب)
+                </div>
+                <div class="food-item">
+                    <strong>ملعقة زيت</strong> - 90 كالوري (10g دهون)
+                </div>
+                <div class="calories-info">
+                    الإجمالي: 910 كالوري | بروتين 54g | كارب 69g | دهون 45g
+                </div>
+            </div>
+        </section>
+
+        <!-- Shopping Section -->
+        <section id="shopping" class="content-section">
+            <h2 style="color: #2c3e50; margin-bottom: 2rem; text-align: center; font-size: 2rem;">🛒 قائمة المشتريات الشهرية</h2>
+            
+            <div class="shopping-grid">
+                <div class="shopping-category">
+                    <h4>🥩 البروتينات</h4>
+                    <div class="shopping-item">
+                        <span>صدور فراخ</span>
+                        <strong>6 كجم</strong>
+                    </div>
+                    <div class="shopping-item">
+                        <span>لحمة حمراء</span>
+                        <strong>6 كجم</strong>
+                    </div>
+                    <div class="shopping-item">
+                        <span>بيض</span>
+                        <strong>90 بيضة</strong>
+                    </div>
+                </div>
+
+                <div class="shopping-category">
+                    <h4>🍞 النشويات</h4>
+                    <div class="shopping-item">
+                        <span>عيش بلدي</span>
+                        <strong>12 كجم</strong>
+                    </div>
+                    <div class="shopping-item">
+                        <span>رز ناشف</span>
+                        <strong>6 كجم</strong>
+                    </div>
+                    <div class="shopping-item">
+                        <span>بطاطس</span>
+                        <strong>18 كجم</strong>
+                    </div>
+                    <div class="shopping-item">
+                        <span>مكرونة ناشفة</span>
+                        <strong>3 كجم</strong>
+                    </div>
+                </div>
+
+                <div class="shopping-category">
+                    <h4>🥜 الدهون الصحية</h4>
+                    <div class="shopping-item">
+                        <span>فول سوداني</span>
+                        <strong>3 كجم</strong>
+                    </div>
+                    <div class="shopping-item">
+                        <span>زيت نباتي</span>
+                        <strong>0.6 لتر</strong>
+                    </div>
+                </div>
+
+                <div class="shopping-category">
+                    <h4>🍎 الفواكه</h4>
+                    <div class="shopping-item">
+                        <span>موز</span>
+                        <strong>3.6 كجم</strong>
+                    </div>
+                    <div class="shopping-item">
+                        <span>تفاح</span>
+                        <strong>4.5 كجم</strong>
+                    </div>
+                    <div class="shopping-item">
+                        <span>مانجا</span>
+                        <strong>3 كجم</strong>
+                    </div>
+                </div>
+
+                <div class="shopping-category">
+                    <h4>🥦 الخضروات</h4>
+                    <div class="shopping-item">
+                        <span>خضار مطبوخ</span>
+                        <strong>6 كجم</strong>
+                    </div>
+                    <div class="shopping-item">
+                        <span>خضار سلطة</span>
+                        <strong>6 كجم</strong>
+                    </div>
+                </div>
+
+                <div class="shopping-category">
+                    <h4>🥛 منتجات الألبان</h4>
+                    <div class="shopping-item">
+                        <span>زبادي</span>
+                        <strong>3 كجم</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section id="tips" class="content-section">
+            <h2 style="color: #2c3e50; margin-bottom: 2rem; text-align: center; font-size: 2rem;">💡 النصائح والإرشادات</h2>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>⚡ تحسين الطاقة</h4>
+                    <ul style="margin-top: 1rem;">
+                        <li>نام 7-9 ساعات متواصلة</li>
+                        <li>تناول الفيتامينات الطبيعية</li>
+                        <li>تجنب السكريات المصنعة</li>
+                        <li>مارس المشي 20-30 دقيقة يومياً</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ تحذيرات مهمة</h4>
+                <p>استشر طبيب قبل البدء لو عندك مشاكل في القلب، الضغط، السكري، الكلى، الكبد أو حساسية من أي طعام. توقف فوراً واستشر طبيب لو حسيت بألم في الصدر، صعوبة تنفس، غثيان مستمر، أو صداع شديد.</p>
+            </div>
+        </section>
+
+        <!-- Shopping Section -->
+        <section id="shopping" class="content-section">
+            <h2 style="color: #2c3e50; margin-bottom: 2rem; text-align: center; font-size: 2rem;">🛒 قائمة المشتريات الذكية</h2>
+            
+            <div class="success-box">
+                <h4>💰 نصائح توفير المال</h4>
+                <p>اشتري بالجملة، تفاوض على الأسعار، استخدم الخضار المجمدة، اشتري الخضار الموسمية، واستفيد من عروض آخر اليوم.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <div style="background: linear-gradient(135deg, #e17055, #d63031); color: white; padding: 1.5rem; border-radius: 15px;">
+                    <h4 style="text-align: center; margin-bottom: 1rem;">🥩 البروتينات</h4>
+                    <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                        <span>صدور فراخ</span><strong>6 كجم</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                        <span>لحمة حمراء</span><strong>6 كجم</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
+                        <span>بيض</span><strong>90 بيضة</strong>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #fdcb6e, #e17055); color: white; padding: 1.5rem; border-radius: 15px;">
+                    <h4 style="text-align: center; margin-bottom: 1rem;">🍞 النشويات</h4>
+                    <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                        <span>عيش بلدي</span><strong>12 كجم</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                        <span>رز ناشف</span><strong>6 كجم</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                        <span>بطاطس</span><strong>18 كجم</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
+                        <span>مكرونة</span><strong>3 كجم</strong>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #00b894, #00cec9); color: white; padding: 1.5rem; border-radius: 15px;">
+                    <h4 style="text-align: center; margin-bottom: 1rem;">🍎 الفواكه والخضار</h4>
+                    <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                        <span>موز</span><strong>3.6 كجم</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                        <span>تفاح</span><strong>4.5 كجم</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                        <span>خضار مختلطة</span><strong>12 كجم</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 0.5rem 0;">
+                        <span>زبادي</span><strong>3 كجم</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="content-section">
+            <h2 style="color: #2c3e50; margin-bottom: 2rem; text-align: center; font-size: 2rem;">📈 خطة الـ 90 يوم للنتائج المضمونة</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>الشهر الأول (1-30 يوم): التأسيس 🏗️</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 33%;"></div>
+                    </div>
+                    <p><strong>الأهداف:</strong> التعود على النظام، زيادة 2-4 كجم، تعلم تحضير الوجبات</p>
+                    <p><strong>التركيز:</strong> الانتظام في المواعيد، شرب المياه، النوم الجيد (7-9 ساعات)</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h4>الشهر الثاني (31-60 يوم): التطوير 📈</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 66%;"></div>
+                    </div>
+                    <p><strong>الأهداف:</strong> زيادة 3-5 كجم إضافية، تحسن في القوة، إتقان التحضير</p>
+                    <p><strong>التركيز:</strong> تنويع الوجبات، زيادة شدة التمارين، تتبع التقدم بالصور</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h4>الشهر الثالث (61-90 يوم): التميز 🏆</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%;"></div>
+                    </div>
+                    <p><strong>الأهداف:</strong> زيادة 3-4 كجم إضافية، نتائج واضحة، نظام حياة مستدام</p>
+                    <p><strong>التركيز:</strong> الحفاظ على النتائج، التحضير لمرحلة جديدة، مشاركة التجربة</p>
+                </div>
+            </div>
+
+            <div class="success-box">
+                <h4>🎯 مؤشرات النجاح</h4>
+                <p><strong>الأسبوع 2:</strong> زيادة الطاقة والشهية | <strong>الأسبوع 4:</strong> تحسن القوة | <strong>الأسبوع 8:</strong> نتائج واضحة في المرآة | <strong>الأسبوع 12:</strong> تغيير كبير في شكل الجسم</p>
+            </div>
+        </section>
+
+        <!-- Daily Checklist Section -->
+        <section id="checklist" class="content-section">
+            <h2 style="color: #2c3e50; margin-bottom: 2rem; text-align: center; font-size: 2rem;">✅ قائمة المتابعة اليومية</h2>
+            
+            <div class="checklist">
+                <h3 style="text-align: center; margin-bottom: 2rem;">📋 الـ Check List اليومي</h3>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: #ffeaa7; margin-bottom: 1rem;">🌅 الصباح</h4>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <span>شرب 2 كوب ماء على الريق</span>
+                        <div class="checkbox"></div>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <span>تناول فطار كامل (1145 كالوري)</span>
+                        <div class="checkbox"></div>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <span>تحضير وجبة خفيفة 1</span>
+                        <div class="checkbox"></div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: #fab1a0; margin-bottom: 1rem;">☀️ منتصف اليوم</h4>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <span>وجبة خفيفة 1 (150 كالوري)</span>
+                        <div class="checkbox"></div>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <span>شرب 2-3 أكواب ماء</span>
+                        <div class="checkbox"></div>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <span>تناول غداء كامل (750 كالوري)</span>
+                        <div class="checkbox"></div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: #fd79a8; margin-bottom: 1rem;">🌆 بعد الظهر</h4>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <span>وجبة خفيفة 2 (900 كالوري)</span>
+                        <div class="checkbox"></div>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <span>شرب 2-3 أكواب ماء</span>
+                        <div class="checkbox"></div>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <span>تحضير العشاء</span>
+                        <div class="checkbox"></div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: #a29bfe; margin-bottom: 1rem;">🌙 المساء</h4>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <span>عشاء كامل (910 كالوري)</span>
+                        <div class="checkbox"></div>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <span>كوب ماء أخير</span>
+                        <div class="checkbox"></div>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <span>تحضير فطار اليوم التالي</span>
+                        <div class="checkbox"></div>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <span>النوم قبل 12 بالليل</span>
+                        <div class="checkbox"></div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button onclick="resetChecklist()" style="background: linear-gradient(135deg, #00cec9, #00b894); color: white; border: none; padding: 15px 30px; border-radius: 25px; font-size: 1rem; cursor: pointer; box-shadow: 0 5px 15px rgba(0, 206, 201, 0.4);">
+                        🔄 إعادة تعيين القائمة
+                    </button>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <div style="background: linear-gradient(135deg, #6c5ce7, #5f3dc4); color: white; padding: 1.5rem; border-radius: 15px;">
+                    <h4 style="text-align: center; margin-bottom: 1rem;">📏 متابعة التقدم</h4>
+                    <p><strong>الوزن:</strong> اتزن كل 3-4 أيام في نفس الوقت</p>
+                    <p><strong>القياسات:</strong> محيط الذراع والصدر والخصر كل أسبوعين</p>
+                    <p><strong>الصور:</strong> من الأمام والجانب والخلف أسبوعياً</p>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #74b9ff, #0984e3); color: white; padding: 1.5rem; border-radius: 15px;">
+                    <h4 style="text-align: center; margin-bottom: 1rem;">⚙️ تعديل الخطة</h4>
+                    <p><strong>لو الوزن ثابت:</strong> زود 200-300 كالوري</p>
+                    <p><strong>لو الزيادة سريعة:</strong> قلل 200-300 كالوري</p>
+                    <p><strong>لو حاسس بتعب:</strong> راجع المياه والنوم</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips Section Content -->
+        <section id="tips" class="content-section">
+            <h2 style="color: #2c3e50; margin-bottom: 2rem; text-align: center; font-size: 2rem;">💡 دليل النصائح المتقدمة</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                <div style="background: linear-gradient(135deg, #fd79a8, #e84393); color: white; padding: 2rem; border-radius: 20px; box-shadow: 0 15px 30px rgba(232, 67, 147, 0.3);">
+                    <h4>🛍️ استراتيجيات التسوق الذكي</h4>
+                    <div style="margin-top: 1rem;">
+                        <p><strong>💰 توفير في البروتين:</strong></p>
+                        <ul style="margin: 0.5rem 0 1rem 1rem;">
+                            <li>اشتري 3-6 كجم لحمة مرة واحدة للجملة</li>
+                            <li>تفاوض مع الجزار للكميات الكبيرة</li>
+                            <li>اشتري آخر اليوم للأسعار المخفضة</li>
+                        </ul>
+                        <p><strong>📦 التخزين الذكي:</strong></p>
+                        <ul style="margin: 0.5rem 0 0 1rem;">
+                            <li>قسم اللحمة لأجزاء 200g منفصلة</li>
+                            <li>اكتب التاريخ على كل كيس</li>
+                            <li>استخدم نظام "الأول يدخل الأول يخرج"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #00cec9, #00b894); color: white; padding: 2rem; border-radius: 20px; box-shadow: 0 15px 30px rgba(0, 206, 201, 0.3);">
+                    <h4>🍳 تقنيات التحضير المتقدمة</h4>
+                    <div style="margin-top: 1rem;">
+                        <p><strong>📅 Meal Prep الأسبوعي:</strong></p>
+                        <ul style="margin: 0.5rem 0 1rem 1rem;">
+                            <li>اشوي 1.5 كجم فراخ مرة واحدة</li>
+                            <li>اطبخ 1 كجم لحمة في الفرن</li>
+                            <li>اسلقي 15-20 بيضة واحفظها</li>
+                            <li>حضر الرز والخضار لـ 3 أيام</li>
+                        </ul>
+                        <p><strong>🔥 طرق الطبخ الصحية:</strong></p>
+                        <ul style="margin: 0.5rem 0 0 1rem;">
+                            <li>البخار والسلق يحتفظان بالقيم الغذائية</li>
+                            <li>الشوي بدل القلي يوفر 200-300 كالوري</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #fdcb6e, #e17055); color: white; padding: 2rem; border-radius: 20px; box-shadow: 0 15px 30px rgba(253, 203, 110, 0.3);">
+                    <h4>⏰ توقيت الوجبات المثالي</h4>
+                    <div style="margin-top: 1rem;">
+                        <p><strong>⚡ قبل التمرين (2-3 ساعات):</strong></p>
+                        <p>وجبة غنية بالكارب + بروتين معتدل + دهون قليلة</p>
+                        
+                        <p style="margin-top: 1rem;"><strong>🏃‍♂️ بعد التمرين مباشرة:</strong></p>
+                        <p>موز + كوب لبن أو 3 بلح + ماء خلال 30 دقيقة</p>
+                        
+                        <p style="margin-top: 1rem;"><strong>🌙 قبل النوم:</strong></p>
+                        <p>بروتين بطيء الهضم (زبادي، جبنة قريش)</p>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #a29bfe, #6c5ce7); color: white; padding: 2rem; border-radius: 20px; box-shadow: 0 15px 30px rgba(162, 155, 254, 0.3);">
+                    <h4>🆘 خطة الطوارئ</h4>
+                    <div style="margin-top: 1rem;">
+                        <p><strong>للأيام المشغولة:</strong></p>
+                        <ul style="margin: 0.5rem 0 0 1rem;">
+                            <li>2 علبة تونة + 3 موز + كوب لبن = 800 كالوري</li>
+                            <li>4 بيض مسلوق + 3 رغيف + تفاحة = 900 كالوري</li>
+                            <li>شاورما فراخ كبيرة + عصير = 1000 كالوري</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #ff7675, #d63031); color: white; padding: 2rem; border-radius: 20px; box-shadow: 0 15px 30px rgba(255, 118, 117, 0.3);">
+                    <h4>⚖️ محاربة الملل</h4>
+                    <div style="margin-top: 1rem;">
+                        <p><strong>🎯 تنويع النكهات:</strong></p>
+                        <ul style="margin: 0.5rem 0 1rem 1rem;">
+                            <li>فراخ بالكاري مع رز بالشعرية</li>
+                            <li>لحمة بالبصل مع بطاطس مقلقلة</li>
+                            <li>سمك مشوي مع مكرونة بالصلصة</li>
+                        </ul>
+                        <p><strong>🍽️ تغيير الملمس:</strong></p>
+                        <p>نوع بين المسلوق والمشوي، استخدم التوابل المختلفة</p>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #00b894, #00cec9); color: white; padding: 2rem; border-radius: 20px; box-shadow: 0 15px 30px rgba(0, 184, 148, 0.3);">
+                    <h4>🏆 عوامل النجاح</h4>
+                    <div style="margin-top: 1rem;">
+                        <p><strong>🎯 الانضباط:</strong> التزم بمواعيد الوجبات (±30 دقيقة)</p>
+                        <p><strong>⏳ الصبر:</strong> النتائج الواضحة بعد 6-8 أسابيع</p>
+                        <p><strong>🔄 المرونة:</strong> استخدم البدائل واسمع لجسمك</p>
+                        <p style="text-align: center; margin-top: 1rem; font-style: italic; font-size: 1.1rem;">
+                            "الضخامة النظيفة رحلة ماراثون مش سباق سرعة!"
+                        </p>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #74b9ff, #0984e3); color: white; padding: 2rem; border-radius: 20px; box-shadow: 0 15px 30px rgba(116, 185, 255, 0.3);">
+                    <h4>💪 التمرين المثالي</h4>
+                    <div style="margin-top: 1rem;">
+                        <p><strong>📅 التكرار:</strong> 4-5 أيام أسبوعياً</p>
+                        <p><strong>⏱️ المدة:</strong> 60-90 دقيقة</p>
+                        <p><strong>🏋️ التركيز:</strong> أوزان ثقيلة (8-12 تكرار)</p>
+                        <p><strong>😴 الراحة:</strong> يوم راحة بين كل يومين</p>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #e84393, #d63031); color: white; padding: 2rem; border-radius: 20px; box-shadow: 0 15px 30px rgba(232, 67, 147, 0.3);">
+                    <h4>📱 أدوات مساعدة</h4>
+                    <div style="margin-top: 1rem;">
+                        <p><strong>📊 حساب السعرات:</strong></p>
+                        <ul style="margin: 0.5rem 0 1rem 1rem;">
+                            <li>MyFitnessPal (مجاني)</li>
+                            <li>Cronometer (دقيق أكتر)</li>
+                            <li>ورقة وقلم (تقليدي)</li>
+                        </ul>
+                        <p><strong>🥄 أدوات المطبخ:</strong></p>
+                        <ul style="margin: 0.5rem 0 0 1rem;">
+                            <li>ميزان مطبخ رقمي</li>
+                            <li>مقلاة نون ستيك كبيرة</li>
+                            <li>علب حفظ زجاجية</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box" style="margin-top: 2rem;">
+                <h4>⚠️ تجنب الأخطاء الشائعة</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                    <div>
+                        <p><strong>❌ أخطاء التغذية:</strong></p>
+                        <ul style="margin: 0.5rem 0 0 1rem;">
+                            <li>إهمال الخضار والفواكه</li>
+                            <li>الإفراط في الدهون المشبعة</li>
+                            <li>عدم شرب مياه كافية</li>
+                            <li>تفويت وجبات كاملة</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p><strong>❌ أخطاء التطبيق:</strong></p>
+                        <ul style="margin: 0.5rem 0 0 1rem;">
+                            <li>الوصول للكميات الكاملة من اليوم الأول</li>
+                            <li>عدم التنويع في الوجبات</li>
+                            <li>الاعتماد على الوجبات السريعة</li>
+                            <li>عدم متابعة النتائج</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #55a3ff, #3742fa); color: white; padding: 2rem; border-radius: 20px; margin-top: 2rem; text-align: center;">
+                <h4 style="margin-bottom: 1rem;">🔄 نماذج أسبوعية متنوعة</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px;">
+                        <h5 style="margin-bottom: 1rem;">الأسبوع الكلاسيكي 📅</h5>
+                        <div style="text-align: right; font-size: 0.9rem;">
+                            <p>السبت: فراخ + رز + خضار</p>
+                            <p>الأحد: لحمة + بطاطس + سلطة</p>
+                            <p>الاثنين: تونة + مكرونة + خضار</p>
+                            <p>الثلاثاء: فراخ + بطاطس + سلطة</p>
+                            <p>الأربعاء: لحمة + رز + خضار</p>
+                            <p>الخميس: سمك + مكرونة + سلطة</p>
+                            <p>الجمعة: فراخ + رز + خضار</p>
+                        </div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px;">
+                        <h5 style="margin-bottom: 1rem;">الأسبوع المتنوع 🌟</h5>
+                        <div style="text-align: right; font-size: 0.9rem;">
+                            <p>السبت: جمبري + رز بالشعرية</p>
+                            <p>الأحد: كفتة + بطاطس ودج</p>
+                            <p>الاثنين: فراخ كاري + رز بالخضار</p>
+                            <p>الثلاثاء: سمك فيليه + مكرونة بيضاء</p>
+                            <p>الأربعاء: لحمة مفرومة + رز بالجزر</p>
+                            <p>الخميس: فراخ مشوية + بطاطس بالفرن</p>
+                            <p>الجمعة: سبيط + مكرونة بالصلصة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <div style="background: linear-gradient(135deg, #fdcb6e, #e17055); color: white; padding: 2rem; border-radius: 20px; box-shadow: 0 15px 30px rgba(253, 203, 110, 0.3);">
+                    <h4>⏰ توقيت الوجبات المثالي</h4>
+                    <div style="margin-top: 1rem;">
+                        <p><strong>⚡ قبل التمرين (2-3 ساعات):</strong></p>
+                        <p>وجبة غنية بالكارب + بروتين معتدل + دهون قليلة</p>
+                        
+                        <p style="margin-top: 1rem;"><strong>🏃‍♂️ بعد التمرين مباشرة:</strong></p>
+                        <p>موز + كوب لبن أو 3 بلح + ماء خلال 30 دقيقة</p>
+                        
+                        <p style="margin-top: 1rem;"><strong>🌙 قبل النوم:</strong></p>
+                        <p>بروتين بطيء الهضم (زبادي، جبنة قريش)</p>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #a29bfe, #6c5ce7); color: white; padding: 2rem; border-radius: 20px; box-shadow: 0 15px 30px rgba(162, 155, 254, 0.3);">
+                    <h4>🆘 خطة الطوارئ</h4>
+                    <div style="margin-top: 1rem;">
+                        <p><strong>للأيام المشغولة:</strong></p>
+                        <ul style="margin: 0.5rem 0 0 1rem;">
+                            <li>2 علبة تونة + 3 موز + كوب لبن = 800 كالوري</li>
+                            <li>4 بيض مسلوق + 3 رغيف + تفاحة = 900 كالوري</li>
+                            <li>شاورما فراخ كبيرة + عصير = 1000 كالوري</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #ff7675, #d63031); color: white; padding: 2rem; border-radius: 20px; box-shadow: 0 15px 30px rgba(255, 118, 117, 0.3);">
+                    <h4>⚖️ محاربة الملل</h4>
+                    <div style="margin-top: 1rem;">
+                        <p><strong>🎯 تنويع النكهات:</strong></p>
+                        <ul style="margin: 0.5rem 0 1rem 1rem;">
+                            <li>فراخ بالكاري مع رز بالشعرية</li>
+                            <li>لحمة بالبصل مع بطاطس مقلقلة</li>
+                            <li>سمك مشوي مع مكرونة بالصلصة</li>
+                        </ul>
+                        <p><strong>🍽️ تغيير الملمس:</strong></p>
+                        <p>نوع بين المسلوق والمشوي، استخدم التوابل المختلفة</p>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #00b894, #00cec9); color: white; padding: 2rem; border-radius: 20px; box-shadow: 0 15px 30px rgba(0, 184, 148, 0.3);">
+                    <h4>🏆 عوامل النجاح</h4>
+                    <div style="margin-top: 1rem;">
+                        <p><strong>🎯 الانضباط:</strong> التزم بمواعيد الوجبات (±30 دقيقة)</p>
+                        <p><strong>⏳ الصبر:</strong> النتائج الواضحة بعد 6-8 أسابيع</p>
+                        <p><strong>🔄 المرونة:</strong> استخدم البدائل واسمع لجسمك</p>
+                        <p style="text-align: center; margin-top: 1rem; font-style: italic; font-size: 1.1rem;">
+                            "الضخامة النظيفة رحلة ماراثون مش سباق سرعة!"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Floating Back to Top Button -->
+    <button class="floating-btn" onclick="scrollToTop()" title="العودة لأعلى">
+        ⬆️
+    </button>
+
+    <script>
+        // Tab switching functionality
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+
+        // Checklist functionality
+        function toggleCheck(element) {
+            const checkbox = element.querySelector('.checkbox');
+            checkbox.classList.toggle('checked');
+            
+            // Add completion animation
+            if (checkbox.classList.contains('checked')) {
+                element.style.background = 'rgba(0, 184, 148, 0.2)';
+            } else {
+                element.style.background = 'transparent';
+            }
+        }
+
+        // Reset checklist
+        function resetChecklist() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const items = document.querySelectorAll('.checklist-item');
+            
+            checkboxes.forEach(checkbox => {
+                checkbox.classList.remove('checked');
+            });
+            
+            items.forEach(item => {
+                item.style.background = 'transparent';
+            });
+            
+            // Show success message
+            alert('✅ تم إعادة تعيين القائمة اليومية!');
+        }
+
+        // Scroll to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Progress bar animation on scroll
+        function animateProgressBars() {
+            const progressBars = document.querySelectorAll('.progress-fill');
+            progressBars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    bar.style.width = bar.style.width || '0%';
+                }
+            });
+        }
+
+        // Initialize animations
+        window.addEventListener('scroll', animateProgressBars);
+        window.addEventListener('load', animateProgressBars);
+
+        // Add hover effects to meal cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const mealCards = document.querySelectorAll('.meal-card');
+            mealCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(-5px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0) scale(1)';
+                });
+            });
+        });
+
+        // Dynamic calorie counter
+        let totalCaloriesConsumed = 0;
+        function updateCalorieCounter() {
+            const checkedBoxes = document.querySelectorAll('.checkbox.checked').length;
+            const caloriesPerMeal = [1145, 150, 750, 900, 910];
+            totalCaloriesConsumed = 0;
+            
+            for (let i = 0; i < Math.min(checkedBoxes, 5); i++) {
+                totalCaloriesConsumed += caloriesPerMeal[i] || 0;
+            }
+        }
+
+        // Add click sound effect
+        function playClickSound() {
+            // Simple click feedback without actual sound
+            navigator.vibrate && navigator.vibrate(50);
+        }
+
+        // Enhanced tab clicking with sound
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', playClickSound);
+        });
+
+        // Add smooth scrolling to sections
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                setTimeout(() => {
+                    document.querySelector('.content-section.active').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>🛍️ استراتيجيات التسوق الذكي</h4>
+                    <ul style="margin-top: 1rem;">
+                        <li>اشتري 3-6 كجم لحمة مرة واحدة للجملة</li>
+                        <li>تفاوض مع الجزار للكميات الكبيرة</li>
+                        <li>اشتري اللحمة آخر اليوم للخصم</li>
+                        <li>قسم اللحمة لأجزاء 200g واجمدها</li>
+                    </ul>
+                </div>
+
+                <div class="tip-card">
+                    <h4>🍳 تقنيات التحضير</h4>
+                    <ul style="margin-top: 1rem;">
+                        <li>حضر البروتين لـ 3 أيام مقدماً</li>
+                        <li>اطبخ الرز والمكرونة بكميات كبيرة</li>
+                        <li>استخدم البخار والشوي بدل القلي</li>
+                        <li>حضر خضار السلطة مسبقاً</li>
+                    </ul>
+                </div>
+
+                <div class="tip-card">
+                    <h4>⏰ توقيت الوجبات</h4>
+                    <ul style="margin-top: 1rem;">
+                        <li>قبل التمرين: كارب + بروتين معتدل</li>
+                        <li>بعد التمرين: موز + لبن خلال 30 دقيقة</li>
+                        <li>قبل النوم: بروتين بطيء (زبادي)</li>
+                        <li>وزع الوجبات كل 3-4 ساعات</li>
+                    </ul>
+                </div>
+
+                <div class="tip-card">
+                    <h4>💧 استراتيجية الإماهة</h4>
+                    <ul style="margin-top: 1rem;">
+                        <li>3-4 لتر مياه يومياً</li>
+                        <li>كوب ماء مع كل وجبة</li>
+                        <li>2-3 أكواب إضافية بعد التمرين</li>
+                        <li>لون البول فاتح = إماهة جيدة</li>
+                    </ul>
+                </div>
+
+                <div class="tip-card">
+                    <h4>🚀 نصائح للمبتدئين</h4>
+                    <ul style="margin-top: 1rem;">
+                        <li>ابدأ بـ 80% من الكميات</li>
+                        <li>زود تدريجياً كل أسبوع</li>
+                        <li>ركز على الانتظام قبل الكمال</li>
+                        <li>تعود على النظام قبل الحساب الدقيق</li>
+                    </ul>
+                </div>
+
+                <div class="tip-card">
+                    <h4>
